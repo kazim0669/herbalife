@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Herbalife Wellness Center | Healthy Life Starts Here</title>
+  <meta name="description" content="Herbalife wellness & nutrition center – coaching, products, transformations, and easy consultation booking." />
+  <style>
+    :root{
+      --bg:#0e1b12;          /* Deep green-black */
+      --card:#13231a;        /* Card green */
+      --muted:#cde6d5;       /* Soft mint text */
+      --accent:#45c274;      /* CTA green */
+      --accent-2:#2aa75e;    /* CTA hover */
+      --text:#ecfff3;        /* Main text */
+      --soft:#9ed6b3;        /* Secondary text */
+      --warning:#ffd166;
+      --max:1150px;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:100%;max-width:var(--max);margin-inline:auto;padding:24px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:var(--accent);color:#062810;font-weight:700;letter-spacing:.2px;border:2px solid transparent;transition:.2s ease;box-shadow:var(--shadow)}
+    .btn:hover{background:var(--accent-2);transform:translateY(-1px)}
+    .btn.outline{background:transparent;border-color:var(--accent);color:var(--muted)}
+
+    /* Header base */
+.header {
+  background:rgb(15 31 20);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.logo img {
+  position: absolute;
+  height: 90px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #0f1f14;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 15px;
+    box-shadow: 0px 12px 15px #009688;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+  .ba img {
+    height: 200px;
+    width: 100%;
+  }
+}
+
+
+    /* Hero */
+    .hero{position:relative;isolation:isolate}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(1000px 500px at 80% -10%, rgba(69,194,116,.25), transparent 60%),
+                                           radial-gradient(900px 400px at 10% 110%, rgba(69,194,116,.15), transparent 60%);z-index:-1}
+    .hero-grid{display:grid;gap:24px;align-items:center}
+    .kicker{color:var(--warning);font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+    .title{font-size:clamp(28px, 6vw, 48px);line-height:1.15;margin:8px 0 8px}
+    .subtitle{color:var(--muted);font-size:clamp(15px, 2.5vw, 18px)}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .hero-card{background:var(--card);border:1px solid rgba(255,255,255,.06);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-owner{display:flex;align-items:center;gap:16px}
+    .owner-pic{width:84px;height:84px;border-radius:16px;overflow:hidden;background:#0a1610;border:1px solid rgba(255,255,255,.06)}
+    .owner-meta{display:grid;gap:4px}
+    .owner-meta h4{margin:0;font-size:18px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{font-size:12px;padding:6px 10px;border-radius:999px;background:#0a2e1b;border:1px solid rgba(255,255,255,.08);color:var(--soft)}
+
+    /* Sections */
+    section{scroll-margin-top:90px}
+    .section{padding:40px 0}
+    .section h2{font-size:clamp(22px,4.5vw,34px);margin:0 0 10px}
+    .section p.lead{color:var(--muted);margin:0 0 16px}
+
+    /* About / Why Choose Us */
+    .features{display:grid;gap:16px}
+    .feature{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px}
+    .feature h3{margin:0 0 6px;font-size:18px}
+    .feature p{margin:0;color:var(--soft)}
+
+    /* Products */
+    .cards{display:grid;gap:16px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+    .card .body{padding:16px}
+    .pill{display:inline-block;font-size:12px;padding:6px 9px;border-radius:999px;background:#0c2a19;color:var(--muted);border:1px solid rgba(255,255,255,.06)}
+
+    /* Transformations */
+    .grid-photos{display:grid;gap:12px}
+    .ba{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.06)}
+    .ba .cap{position:absolute;inset:auto 8px 8px 8px;background:rgba(0,0,0,.45);backdrop-filter:blur(2px);padding:6px 10px;border-radius:10px;font-size:13px}
+
+    /* Booking */
+    .book{display:grid;gap:16px;grid-template-columns:1fr;align-items:start}
+    form{display:grid;gap:10px}
+    label{font-weight:600;color:var(--soft)}
+    input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0a1610;color:var(--text)}
+    textarea{min-height:100px}
+
+    /* Why Herbalife */
+    .why{display:grid;gap:16px}
+
+    /* Testimonials */
+    .testis{display:grid;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+    .testi{min-width:300px;scroll-snap-align:start;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:16px}
+    .stars{letter-spacing:1px}
+
+    /* Contact */
+    .contact-grid{display:grid;gap:16px}
+    .map{aspect-ratio:16/10;border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden}
+
+    /* Footer */
+    footer{padding:24px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--soft)}
+
+    /* Responsive Grid Breakpoints */
+    @media (min-width:720px){
+      .hero-grid{grid-template-columns:1.1fr .9fr}
+      .features{grid-template-columns:repeat(3,1fr)}
+      .cards{grid-template-columns:repeat(3,1fr)}
+      .grid-photos{grid-template-columns:repeat(4,1fr)}
+      .book{grid-template-columns:1.1fr .9fr}
+      .why{grid-template-columns:repeat(3,1fr)}
+      .contact-grid{grid-template-columns:1fr 1fr}
+      .nav .cta{display:flex;gap:10px}
+    }
+  </style>
+</head>
+<body>
+<!-- ===== HEADER START ===== -->
+<header class="header">
+  <div class="container">
+    <div class="logo">Herbalife
+      <img src="assets/logo.png" alt="">
+    </div>
+
+    <!-- Hamburger button (mobile) -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#consultation">Consultation</a>
+      <a href="#why">Why Herbalife</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<!-- ===== HEADER END ===== -->
+
+  <!-- Hero -->
+  <section id="hero" class="hero section">
+    <div class="container hero-grid">
+      <div>
+        <div class="kicker">Healthy Life Starts Here</div>
+        <h1 class="title">Personalized Nutrition & Coaching with Herbalife</h1>
+        <p class="subtitle">Aapke goals ke hisaab se simple plans, real guidance aur supportive community. Weight loss, weight gain ya active lifestyle – hum saath hain.</p>
+        <div class="actions">
+          <a class="btn" href="#booking">Book Free Consultation</a>
+          <a class="btn outline" href="#products">Explore Products</a>
+        </div>
+        <div style="margin-top:14px;font-size:13px;color:var(--soft)">⚠️ Disclaimer: Health results person-to-person change ho sakte hain. Humesha apne healthcare professional ki salah lein.</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-owner">
+          <div class="owner-pic">
+            <!-- OWNER IMAGE: Replace src below with your owner's photo path -->
+            <img src="assets/owner.jpg" alt="Center Owner Photo" />
+          </div>
+          <div class="owner-meta">
+            <h4>Kausar Ali</h4>
+            <div class="soft" style="color:var(--soft)">Certified Wellness Coach</div>
+            <div class="badges">
+              <span class="badge">5+ Years Coaching</span>
+              <span class="badge">1000+ Consultations</span>
+              <span class="badge">Community Mentor</span>
+            </div>
+          </div>
+        </div>
+        <!-- Achievements: edit freely -->
+        <ul style="margin:14px 0 0 0;padding-left:18px;color:var(--muted)">
+          <li>Top Performer – Regional Wellness Challenge 2024</li>
+          <li>Client Satisfaction 4.9★ (Internal Survey)</li>
+          <li>Local Health Camp Organizer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Transformations -->
+  <section id="transform" class="section">
+    <div class="container">
+      <h2>Customer Transformations (Before/After)</h2>
+      <p class="lead">Real clients, real progress. Yahan aap apne local clients ki photos & stories dikhayein (permission ke saath).</p>
+      <div class="grid-photos">
+        <figure class="ba">
+          <img src="assets/before-after1.jpg" alt="Before After 1" />
+          <figcaption class="cap">Anjali – 10kg in 4 months (with coaching & lifestyle changes)</figcaption>
+        </figure>
+        <figure class="ba">
+          <img src="assets/before-after2.jpg" alt="Before After 2" />
+          <figcaption class="cap">Rahul – Gained 6kg lean mass (guided plan + routine)</figcaption>
+        </figure>
+        <figure class="ba">
+          <img src="assets/before-after3.jpg" alt="Before After 3" />
+          <figcaption class="cap">Neha – Energy & routine improved (everyday wellness)</figcaption>
+        </figure>
+        <figure class="ba">
+          <img src="assets/before-after4.jpg" alt="Before After 4" />
+          <figcaption class="cap">Arun – Visible inch loss (consistency + support)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- About / Why Choose Us -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us / Why Choose Us</h2>
+      <p class="lead">Hum science-backed nutrition, personalized guidance aur friendly follow‑ups ke saath aapko sustainable results dilane par focus karte hain.</p>
+      <div class="features">
+        <div class="feature">
+          <h3>Personalized Plans</h3>
+          <p>Har body unique hai – isliye hum aapke goals, routine aur budget ke hisaab se plan banate hain.</p>
+        </div>
+        <div class="feature">
+          <h3>Accountability & Support</h3>
+          <p>Weekly check‑ins, progress tracking aur motivation – taaki aap consistent rahen.</p>
+        </div>
+        <div class="feature">
+          <h3>Trusted Products</h3>
+          <p>Globally trusted Herbalife nutrition range ke saath easy, tasty aur convenient options.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products & Services -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2>Our Products & Services</h2>
+      <p class="lead">Popular bundles aur coaching services jo aapke goal tak pahunchne me madad karein.</p>
+      <div class="cards">
+        <!-- CARD 1 -->
+        <article class="card">
+          <img src="assets/product1.jpg" alt="Product 1" />
+          <div class="body">
+            <div class="pill">Weight Loss</div>
+            <h3 style="margin:10px 0 6px">Smart Start Pack</h3>
+            <p style="color:var(--soft);margin:0 0 10px">Daily shakes + coaching + hydration guide. Beginner friendly.</p>
+            <a href="#booking" class="btn">Consult Now</a>
+          </div>
+        </article>
+        <!-- CARD 2 -->
+        <article class="card">
+          <img src="assets/product2.jpg" alt="Product 2" />
+          <div class="body">
+            <div class="pill">Weight Gain</div>
+            <h3 style="margin:10px 0 6px">Active Gain Kit</h3>
+            <p style="color:var(--soft);margin:0 0 10px">Extra calories the smart way + protein support + routine tips.</p>
+            <a href="#booking" class="btn">Consult Now</a>
+          </div>
+        </article>
+        <!-- CARD 3 -->
+        <article class="card">
+          <img src="assets/product3.jpg" alt="Product 3" />
+          <div class="body">
+            <div class="pill">Wellness</div>
+            <h3 style="margin:10px 0 6px">Everyday Wellness</h3>
+            <p style="color:var(--soft);margin:0 0 10px">Balanced nutrition + lifestyle coaching for daily energy.</p>
+            <a href="#booking" class="btn">Consult Now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Consultation / Appointment Booking -->
+  <section id="booking" class="section">
+    <div class="container book">
+      <div>
+        <h2>Consultation / Appointment Booking</h2>
+        <p class="lead">Form fill karke free consultation book karein. Hum WhatsApp par confirm karenge.</p>
+        <form id="consultForm">
+          <div>
+            <label for="name">Full Name</label>
+            <input required id="name" name="name" placeholder="Aapka naam" />
+          </div>
+          <div>
+            <label for="phone">Mobile</label>
+            <input required id="phone" name="phone" placeholder="10 digit number" pattern="[0-9]{10}" />
+          </div>
+          <div>
+            <label for="goal">Goal</label>
+            <select id="goal" name="goal">
+              <option>Weight Loss</option>
+              <option>Weight Gain</option>
+              <option>Wellness / Energy</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Message (optional)</label>
+            <textarea id="message" name="message" placeholder="Apne routine ya doubts likhein"></textarea>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn" type="submit">Book on WhatsApp</button>
+            <a class="btn outline" href="tel:+91XXXXXXXXXX">Call Now</a>
+          </div>
+          <div id="formNote" style="font-size:13px;color:var(--soft)"></div>
+        </form>
+      </div>
+      <aside class="hero-card">
+        <h3 style="margin:0 0 10px">How it works</h3>
+        <ol style="margin:0 0 10px 20px;color:var(--muted)">
+          <li>Form submit karein – WhatsApp auto-message generate hoga.</li>
+          <li>Coach aap se goal, routine aur preference samjhenge.</li>
+          <li>Personalized nutrition + coaching plan banega.</li>
+        </ol>
+        <div class="badge">Response within working hours</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Why Herbalife -->
+  <section id="why" class="section">
+    <div class="container">
+      <h2>Why Herbalife?</h2>
+      <p class="lead">Globally trusted nutrition brand, guidance ke saath convenient aur consistent results ke liye.</p>
+      <div class="why">
+        <div class="feature">
+          <h3>Science‑inspired Nutrition</h3>
+          <p>Balanced macro‑micro nutrients ke saath daily lifestyle me fit hone wale options.</p>
+        </div>
+        <div class="feature">
+          <h3>Global Community</h3>
+          <p>Coaches & members ka network – accountability aur motivation ke liye.</p>
+        </div>
+        <div class="feature">
+          <h3>Guided Programs</h3>
+          <p>Sirf product nahi – progress tracking, habit building aur follow‑ups bhi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials / Reviews -->
+  <section id="testi" class="section">
+    <div class="container">
+      <h2>Testimonials / Reviews</h2>
+      <p class="lead">Clients ki short stories aur feedback jo naya visitor ko trust den.</p>
+      <div class="testis" aria-label="Testimonials slider">
+        <figure class="testi">
+          <div class="stars">★★★★★</div>
+          <figcaption>
+            “Coach ne simple steps diye, 3 months me noticeable changes. Support best!” – <strong>Priya</strong>
+          </figcaption>
+        </figure>
+        <figure class="testi">
+          <div class="stars">★★★★★</div>
+          <figcaption>
+            “Busy schedule ke bawajood easy follow hua. Energy levels upar!” – <strong>Aman</strong>
+          </figcaption>
+        </figure>
+        <figure class="testi">
+          <div class="stars">★★★★☆</div>
+          <figcaption>
+            “Weekly check‑ins se discipline bana. Taste bhi accha laga.” – <strong>Riya</strong>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+      <div>
+        <h2>Contact & Location</h2>
+        <p class="lead">Visit karein ya WhatsApp karein – hum madad ke liye hai.</p>
+        <ul style="list-style:none;padding:0;margin:0 0 16px;color:var(--muted)">
+          <li><strong>Address:</strong> Shop No. X, Main Road, Your City</li>
+          <li><strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></li>
+          <li><strong>WhatsApp:</strong> <a id="waText" href="#">Chat Now</a></li>
+          <li><strong>Hours:</strong> Mon–Sat, 8 AM – 8 PM</li>
+        </ul>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#booking">Book Consultation</a>
+          <a class="btn outline" href="#hero">Back to Top</a>
+        </div>
+      </div>
+      <div class="map">
+        <!-- Replace the src with your Google Maps Embed URL -->
+        <iframe title="Map" width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019536!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjkiVw!5e0!3m2!1sen!2sus!4v0000000000"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Herbalife Wellness Center</div>
+      <div style="color:var(--soft);font-size:13px">Made with care • Disclaimer: Individual results may vary.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ====== Smooth anchor scroll (native behavior is fine, but ensure offset works in older browsers)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+
+    // ====== Dynamic year
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // ====== WhatsApp prefill from form
+    const PHONE = '+91XXXXXXXXXX'; // <- Replace with your business WhatsApp number (include country code)
+
+    function buildWA(params){
+      const url=new URL('https://wa.me/' + PHONE.replace(/[^0-9]/g,''));
+      const text=`Hello! I want a consultation.\nName: ${params.name}\nPhone: ${params.phone}\nGoal: ${params.goal}\nMessage: ${params.message || '-'}\nSent from Landing Page`;
+      url.searchParams.set('text', text);
+      return url.toString();
+    }
+
+    document.getElementById('whBtn').addEventListener('click', (e)=>{
+      e.preventDefault();
+      window.open('https://wa.me/' + PHONE.replace(/[^0-9]/g,''), '_blank');
+    });
+
+    document.getElementById('waText').addEventListener('click', (e)=>{
+      e.preventDefault();
+      window.open('https://wa.me/' + PHONE.replace(/[^0-9]/g,''), '_blank');
+    });
+
+    const form=document.getElementById('consultForm');
+    const note=document.getElementById('formNote');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const fd=new FormData(form);
+      const params=Object.fromEntries(fd.entries());
+      if(!/^\d{10}$/.test(params.phone||'')){
+        note.textContent='Please enter a valid 10‑digit mobile number.';
+        return;
+      }
+      const link=buildWA(params);
+      note.textContent='Opening WhatsApp…';
+      window.open(link,'_blank');
+      form.reset();
+    });
+  </script>
+  <script>
+function toggleMenu() {
+  document.getElementById("navbar").classList.toggle("active");
+  document.querySelector(".hamburger").textContent =
+    document.getElementById("navbar").classList.contains("active") ? "✖" : "☰";
+}
+</script>
+
+</body>
+</html>
